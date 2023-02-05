@@ -21,7 +21,7 @@ async def root1():
 async def root2():
     """Retornar informacion ('despues del cambio')"""
     results = {
-        'name':'Kevin Guevara',
+        'name':'Este es un nuevo mensaje',
     }
     obj = {"status": 200, "results": results, "msg": "Peticion correcta"}
     return obj
