@@ -20,14 +20,18 @@ async def root1():
     obj = {"status": 200, "results": results, "msg": "Peticion correcta"}
     return obj
 
-@router.get("/telefono3")
-def read_item():
+@router.get("/telefono2/{palabra}")
+def read_item(palabra: str):
     """inicio"""
-    url = 'https://9st22m.deta.dev/telefono1/holaa'
-    # url = 'https://ojyvp2.deta.dev/telefono4/'+cambios
+    url = 'https://7gskcu.deta.dev/telefono3/'+palabra.upper()
     resp = requests.get(url)
     respuesta = resp.json()
-    return respuesta
+    return {'status': 200,
+            'results': {
+                'original': palabra,
+                'change': respuesta
+            }
+            }
 
 if __name__ == '__main__':
     router.run(port=8000)
